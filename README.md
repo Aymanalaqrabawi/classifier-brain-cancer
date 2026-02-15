@@ -1,9 +1,10 @@
 ---
 title: "Brain Tumor Classification Using ResNet"
-author: "Your Name"
-date: "`r Sys.Date()`"
+author: "Ayman Alaqrabawi"
+date: "`9/2/2026`"
 output:
   html_document:
+  
     toc: true
     toc_depth: 3
 ---
