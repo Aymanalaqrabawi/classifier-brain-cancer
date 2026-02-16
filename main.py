@@ -7,9 +7,15 @@ import keras
 import numpy as np
 from PIL import Image
 from io import BytesIO
+<<<<<<< HEAD
 #from tensorflow.keras.models import load_model
 
 brain_cancer_model = 'C:\Users\pc\classifier-brain-cancer\Early_classifier_brain_cancer .ipynb'
+=======
+import tensorflow as tf 
+from tesnorflow import load_model 
+
+>>>>>>> 49add94a534e2a9b46051096ed4025e75ae11f13
 
 app = FastAPI()
 
