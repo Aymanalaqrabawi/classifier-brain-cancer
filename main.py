@@ -1,11 +1,15 @@
+
 from fastapi import FastAPI, APIRouter, UploadFile
 import uvicorn
+import tensorflow as tf
+import os
+import keras
 import numpy as np
 from PIL import Image
 from io import BytesIO
+#from tensorflow.keras.models import load_model
 
-from Early_classifire_brain_cancer(2) import model as brain_cancer_model
-from tensorflow.keras.applications.resnet50 import preprocess_input
+brain_cancer_model = 'C:\Users\pc\classifier-brain-cancer\Early_classifier_brain_cancer .ipynb'
 
 app = FastAPI()
 
@@ -16,16 +20,12 @@ router = APIRouter(
 
 @router.post("/predict")
 async def predict_brain_cancer(file: UploadFile):
-    # قراءة الصورة
     contents = await file.read()
     image = Image.open(BytesIO(contents)).convert("RGB")
     image = image.resize((224, 224))
 
     # تحويل إلى numpy
     img_array = np.array(image)
-    img_array = np.expand_dims(img_array, axis=0)
-    img_array = preprocess_input(img_array)
-
     # التنبؤ
     preds = brain_cancer_model.predict(img_array)
     predicted_class = int(np.argmax(preds, axis=1)[0])
