@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 import tensorflow as tf 
-from tesnorflow import load_model
+from tesnorflow import load_model 
 
 
 app = FastAPI()
