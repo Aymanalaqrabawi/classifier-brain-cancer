@@ -4,6 +4,8 @@ author: "Ayman Alaqrabawi"
 date: "9/2/2026"
 output:
   html_document:
+    toc: true
+    toc_depth: 3
   ---
 
 # 1. Introduction
