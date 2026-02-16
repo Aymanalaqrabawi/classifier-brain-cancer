@@ -1,21 +1,11 @@
 
 from fastapi import FastAPI, APIRouter, UploadFile
 import uvicorn
-import tensorflow as tf
-import os
-import keras
 import numpy as np
 from PIL import Image
 from io import BytesIO
-<<<<<<< HEAD
-#from tensorflow.keras.models import load_model
-
-brain_cancer_model = 'C:\Users\pc\classifier-brain-cancer\Early_classifier_brain_cancer .ipynb'
-=======
-import tensorflow as tf 
-from tesnorflow import load_model 
-
->>>>>>> 49add94a534e2a9b46051096ed4025e75ae11f13
+import pickle
+brain_cancer = pickle.load(open("classifier_brain_cancer.pkl", "rb"))
 
 app = FastAPI()
 
@@ -33,8 +23,16 @@ async def predict_brain_cancer(file: UploadFile):
     # تحويل إلى numpy
     img_array = np.array(image)
     # التنبؤ
-    preds = brain_cancer_model.predict(img_array)
+    preds = brain_cancer.predict(img_array)
     predicted_class = int(np.argmax(preds, axis=1)[0])
+    if predicted_class == 0:
+        predicted_class = "glioma_tumor"
+    elif predicted_class == 1:
+        predicted_class = "meningioma_tumor"
+    elif predicted_class == 2:
+        predicted_class = "no_tumor"
+    else:
+        predicted_class = "pituitary_tumor"
     confidence = float(np.max(preds))
 
     return {
