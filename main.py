@@ -3,9 +3,9 @@ import uvicorn
 import numpy as np
 from PIL import Image
 from io import BytesIO
+import tensorflow as tf 
+from tesnorflow import load_model
 
-from Early_classifire_brain_cancer(2) import model as brain_cancer_model
-from tensorflow.keras.applications.resnet50 import preprocess_input
 
 app = FastAPI()
 
