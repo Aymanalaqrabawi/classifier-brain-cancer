@@ -5,9 +5,12 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 import pickle
-brain_cancer = pickle.load(open("classifier_brain_cancer.pkl", "rb"))
 
-app = FastAPI()
+# تحميل النموذج
+with open("C:\\Users\\pc\\Downloads\\classifier_brain_cancer (1).pkl", "rb") as f:
+    brain_cancer = pickle.load(f)
+
+app = FastAPI(root_path="/api")
 
 router = APIRouter(
     prefix="/brain_cancer",

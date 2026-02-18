@@ -4,3 +4,5 @@ matplotlib
 tensorflow==2.13.0
 Pillow
 scikit-learn
+fastapi
+uvicorn
