@@ -1,0 +1,27 @@
+# ── config.py ────────────────────────────────────────────────────────────────
+# All constants from the notebook — single source of truth
+# ─────────────────────────────────────────────────────────────────────────────
+
+import tensorflow as tf
+
+TRAIN_PATH   = '/content/drive/MyDrive/Training'
+TEST_PATH    = '/content/drive/MyDrive/Testing'
+
+IMG_SIZE     = 224
+BATCH_SIZE   = 32
+AUTOTUNE     = tf.data.AUTOTUNE
+
+P1_EPOCHS    = 1
+P1_LR        = 1e-3
+P2_EPOCHS    = 20
+P2_LR        = 1e-5
+FINE_TUNE_AT = 140
+
+CLASS_NAMES  = ['glioma', 'meningioma', 'notumor', 'pituitary']
+NUM_CLASSES  = len(CLASS_NAMES)
+
+CKPT_P1      = '/content/best_phase1.keras'
+CKPT_P2      = '/content/best_phase2.keras'
+SAVEDMODEL   = '/content/brain_cancer_savedmodel'
+TFLITE_PATH  = '/content/brain_cancer.tflite'
+LOG_DIR      = '/content/logs'
