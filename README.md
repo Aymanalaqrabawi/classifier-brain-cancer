@@ -1,4 +1,4 @@
-Brain Cancer MRI Classifier
+iBrain Cancer MRI Classifier
 
 Production-grade Deep Learning pipeline for Brain MRI classification using TensorFlow and ResNet50.
 
@@ -246,8 +246,7 @@ pip install -r requirements.txt
 Running the Project
 
 Clone repository:
-
-git clone https://github.com/yourusername/brain-mri-classifier.git
+Aymanalaqrabawi/classifier-brain-cancer https://share.google/iS89X0pax6dxPZ0ok
 
 Enter project:
 
