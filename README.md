@@ -246,7 +246,7 @@ pip install -r requirements.txt
 Running the Project
 
 Clone repository:
-Aymanalaqrabawi/classifier-brain-cancer https://share.google/iS89X0pax6dxPZ0ok
+https://github.com/Aymanalaqrabawi/classifier-brain-cancer
 
 Enter project:
 
